@@ -9,8 +9,8 @@ Encore
   .disableSingleRuntimeChunk()
   .splitEntryChunks()
 
-  .setOutputPath(`public/`)
-  .setPublicPath(`/`)
+  .setOutputPath('public/')
+  .setPublicPath('/')
   .setManifestKeyPrefix('')
 
   .cleanupOutputBeforeBuild()
@@ -88,10 +88,6 @@ Encore.addPlugin(new HtmlWebpackInjector())
 
 if (process.env.ANALYZE) {
   Encore.addPlugin(new BundleAnalyzerPlugin())
-}
-
-if (Encore.isDevServer()) {
-  Encore.disableCssExtraction()
 }
 
 module.exports = Encore.getWebpackConfig()
