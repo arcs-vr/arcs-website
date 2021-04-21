@@ -1,1 +1,45 @@
 @import "vars";
+@import "logo.scss";
+
+body {
+  background-color: #222;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.wrapper {
+  margin: auto;
+  max-width: 500px;
+  position: relative;
+  transition: width;
+  transition-duration: 1s;
+  width: 720px;
+
+  &.-small {
+    width: 360px;
+  }
+
+  .title-container {
+    opacity: 0;
+    transition: opacity;
+    transition-duration: 1s;
+
+    &.-visible {
+      opacity: 1;
+    }
+  }
+}
+
+h1 {
+  font: normal normal normal 64px/77px filson-pro, sans-serif;
+  letter-spacing: -.64px;
+}
+
+h2 {
+  font: normal normal normal 32px/49px sofia-pro, sans-serif;
+}

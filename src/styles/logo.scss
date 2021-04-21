@@ -1,0 +1,95 @@
+@function pow($base, $exponents) {
+  $raised: 1;
+
+  @for $i from 1 through $exponents {
+    $raised: $raised * $base;
+  }
+
+  @return $raised;
+}
+
+@mixin hover-keyframes($name, $distance, $duration: 4s, $easing: ease, $delay: .2s) {
+  animation: $name $duration $easing $delay infinite;
+  will-change: transform;
+
+  @keyframes #{$name} {
+
+    0%,
+    100% {
+      transform: translate3d(0, $distance, 0);
+    }
+
+    50%,
+    90% {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+.logo {
+  $layers-count: 5;
+  $offset-total: 30%;
+  $offset-correction: $offset-total / 2;
+  $offset-layers-max: pow($layers-count, 2);
+
+  overflow: visible;
+
+  @include hover-keyframes(logo, -$offset-correction);
+
+  .base {
+
+    @include hover-keyframes(base, $offset-total);
+  }
+
+  .isolate {
+    isolation: isolate;
+  }
+
+  .b {
+    fill: #666;
+  }
+
+  .c {
+    fill: #4c4c4c;
+  }
+
+  .d {
+    opacity: .3;
+  }
+
+  .e {
+    fill: #edbec7;
+  }
+
+  .f {
+    fill: #c6edf7;
+  }
+
+  .g {
+    opacity: .4;
+  }
+
+  .h {
+    opacity: .6;
+  }
+
+  .i {
+    opacity: .8;
+  }
+
+  .j {
+    fill: #ef8f9d;
+  }
+
+  .k {
+    fill: #95e4f9;
+  }
+
+  @for $index from 0 through ($layers-count - 1) {
+    .layer-#{$index} {
+      $offset: (pow($index + 1, 2) / $offset-layers-max) * $offset-total;
+
+      @include hover-keyframes(layer-#{$index}, $offset);
+    }
+  }
+}
