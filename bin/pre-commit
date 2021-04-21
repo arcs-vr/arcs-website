@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
+# shellcheck source=./io.sh
+source "$DIR/io.sh"
+
+DIRECTORIES="src"
+
+colored_output "$GREEN" "\n[EXECUTING PRE COMMIT HOOK]"
+
+io_info "Linting/Fixing JS Code Style"
+
+# shellcheck disable=SC2046
+if ! eslint --fix --quiet $(find $DIRECTORIES -type f -name '*.js'); then
+  error "Error in JavaScript file. Run ${YELLOW}eslint${RESET} to check."
+  exit 1
+fi
+
+io_info "Linting/Fixing SCSS Code Style"
+
+# shellcheck disable=SC2046
+if ! stylelint --fix --quiet --syntax scss $(find $DIRECTORIES -type f -name '*.scss'); then
+  io_error "Error in SCSS file. Run ${YELLOW}stylelint${RESET} to check."
+  exit 1
+fi
+
+io_success "All good, staging additional changes.\n"
+git update-index --again
+
+exit 0

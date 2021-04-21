@@ -1,0 +1,24 @@
+<div
+  class="modal {{size}} fade"
+  id="{% if id %}{{ id }}{% else %}cm-modal{% endif %}"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="cm-modal"
+  aria-hidden="true"
+>
+
+    <div
+      class="modal-dialog mx-auto"
+      role="document"
+    >
+        <div class="modal-content {{bodySize}} modal-custom-body">
+            <div
+              class="modal-close"
+              data-dismiss="modal"
+            >×
+            </div>
+
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</div>

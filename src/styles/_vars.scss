@@ -1,0 +1,91 @@
+/* Grid setup */
+
+$max-width: 1520px;
+$header-height: 88px;
+$header-height-mobile: 65px;
+
+/* Colour palette */
+
+$color-black: #000;
+$color-white: #fff;
+$color-brand-yellow: #faba00;
+// $color-brand-blue: #1B2A4F;
+$color-brand-blue: #1d6e9b;
+$color-brand-blue-light: #77a8c3;
+$color-brand-blue-darker: #17577b;
+$color-brand-blue-dark: #004971;
+$color-brand-gray: #f5f5f5;
+$color-brand-dark-gray: #676767;
+
+$color-light-gray: #b9baba;
+$color-dark-gray: #39393a;
+$color-dark-green: #32cc7a;
+$color-dark-green-40: rgba(50, 204, 122, .4);
+$color-black-light: #000e1f;
+$color-black-lighter: #252728;
+$color-red: #e95341;
+$color-red-dark: #8c1222;
+
+$color-text: $color-black-light;
+$body-background-color: $color-white;
+
+$color-primary: $color-brand-blue !default;
+$color-primary-light: lighten($color-brand-blue, 7%) !default;
+$color-secondary: $color-brand-gray !default;
+
+/* Components */
+
+$theme-colors: ();
+$theme-colors: map-merge(
+  (
+    "primary": $color-primary,
+    "primary-light": $color-primary-light,
+    "secondary": $color-secondary,
+    "black": $color-black-light,
+    "yellow": $color-brand-yellow
+  ),
+  $theme-colors
+);
+
+// Font Family
+$font-family-sans: 'Work Sans', sans-serif !default;
+$font-family: $font-family-sans;
+
+// Font Size
+$font-size-base: 1rem !default;
+$font-size-xs: .75rem !default;
+$font-size-sm: .875rem !default;
+$font-size-lg: 1.125rem !default;
+$font-size-xl: 1.25rem !default;
+$font-size-xxl: 1.5rem !default;
+
+// Font Line Height
+$line-height-base: 1.5 !default;
+
+// Font Weight
+$font-weight-hairline: 100 !default;
+$font-weight-thin: 200 !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-semibold: 600 !default;
+$font-weight-bold: 700 !default;
+$font-weight-extrabold: 800 !default;
+$font-weight-black: 900 !default;
+
+// Paragraph
+$paragraph-margin-bottom: 1rem !default;
+
+// Headings
+$headings-margin-bottom: 1rem !default;
+$headings-font-family: $font-family !default;
+$headings-font-weight: 100 !default;
+$headings-line-height: 1.2 !default;
+$headings-color: inherit !default;
+$headings-text-transform: inherit !default;
+
+/* Career */
+$career-border-radius: 5px !default;
+
+/* Paths */
+$assetPath: "/Images/shop" !default;
