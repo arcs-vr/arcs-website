@@ -1,19 +1,55 @@
 @import "vars";
 @import "logo.scss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #222;
+  color: white;
   margin: 0;
 }
 
-header {
+.text-red {
+  color: #ef8f9d;
+}
+
+.text-blue {
+  color: #95e4f9;
+}
+
+a {
+  color: white;
+  font: normal normal normal 32px/49px sofia-pro, sans-serif;
+  margin: 16px;
+  padding: 16px;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #95e4f9;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+header,
+section {
+  align-items: center;
   display: flex;
   height: 100vh;
+  justify-content: center;
   width: 100vw;
 }
 
-.wrapper {
-  margin: auto;
+.logo-container {
+  margin-right: 64px;
   max-width: 500px;
   position: relative;
   transition: width;
@@ -23,23 +59,57 @@ header {
   &.-small {
     width: 360px;
   }
+}
 
-  .title-container {
-    opacity: 0;
-    transition: opacity;
-    transition-duration: 1s;
+.title-container {
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity;
+  transition-duration: 1s;
 
-    &.-visible {
-      opacity: 1;
-    }
+  &.-visible {
+    display: flex;
+    opacity: 1;
+  }
+
+  .title {
+    font: normal normal normal 64px/77px filson-pro, sans-serif;
+    letter-spacing: -.64px;
+    margin: 0;
+    text-align: left;
+  }
+
+  .subtitle {
+    font: normal normal normal 32px/49px sofia-pro, sans-serif;
+    margin: 0;
   }
 }
 
-h1 {
-  font: normal normal normal 64px/77px filson-pro, sans-serif;
-  letter-spacing: -.64px;
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+
+  .section-artwork {
+    width: 100%;
+  }
+
+  .subtitle {
+    margin-bottom: 16px;
+  }
 }
 
-h2 {
-  font: normal normal normal 32px/49px sofia-pro, sans-serif;
+p {
+  font: normal normal normal 24px/37px filson-pro, sans-serif;
+  margin-bottom: 0;
+  margin-top: 16px;
+  text-align: left;
+}
+
+.imprint {
+  font: normal normal normal 16px/24px sofia-pro, sans-serif;
+  margin: 16px;
+  padding: 16px;
+  text-align: center;
 }

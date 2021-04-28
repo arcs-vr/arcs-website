@@ -3,17 +3,13 @@
 {% set head_title = 'Overview' %}
 
 {% block page %}
+    <nav>
+        <a href="#WHAT">WHAT</a>
+        <a href="#HOW">HOW</a>
+        <a href="#CODE">CODE</a>
+    </nav>
     <header>
-        <div class="wrapper -small">
-            <div class="title-container -visible">
-                <h1>
-                    Arbitrary Remote Control System
-                </h1>
-                <h2>
-                    Multi-Device Interactive Web Based VR
-                </h2>
-
-            </div>
+        <div class="logo-container -small">
 
             <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -135,6 +131,88 @@
                 </g>
             </svg>
         </div>
+        <div class="title-container -visible">
+            <h1 class="title">
+                <span class="text-red">A</span>rbitrary
+                <span class="text-red">R</span>emote
+                <span class="text-red">C</span>ontrol
+                <span class="text-blue">S</span>ystem
+            </h1>
+            <h2 class="subtitle">
+                Multi-Device Interactive Web Based VR
+            </h2>
+        </div>
     </header>
+    <section>
+        <div class="column" id="WHAT">
+            <img class="section-artwork" src="../../assets/images/generative_lines_1.png" alt="abstract line artwork">
+        </div>
+        <div class="column">
+            <div class="title-container -visible">
+                <h3 class="title text-red">Connect Multiple Devices</h3>
+                <h4 class="subtitle">Smartphones, Tablets, Laptops, Desktop PCs, Fridges</h4>
+            </div>
+            <p>
+                If it has an internet connection, it can be used to control your virtual experience.
+            </p>
+            <p>
+                Make use of an abstract API to connect any device. Your users can use one smartphone as a headset
+                and a second one as a controller, or combine their desktop or laptop PCs to use keyboard
+                and mouse inputs.
+            </p>
+
+            <p>
+                The controlling application does
+                not have to be browser-based. All it needs is a connection to the internet.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div class="column" id="HOW">
+            <img class="section artwork" src="../../assets/images/generative_lines_2.png" alt="abstract line artwork">
+        </div>
+        <div class="column">
+            <div class="title-container -visible">
+                <h3 class="title text-red">Peer-To-Peer Connectivity</h3>
+                <h4 class="subtitle">The most direct way for cross-devices communication.</h4>
+            </div>
+            <p>Once a broker server has established a connection between your devices, they will communicate directly
+                with each other. This reduces your need for remote servers to a bare minimum.</p>
+            <p>
+                Using an MQTT broker
+                server, your application can gracefully fall back to using the minimalistic and fast MQTT protocol, if
+                Peer-To-Peer WebRTC is not possible or available.</p>
+            <p>
+                Create your <span class="text-red">ARC</span><span class="text-blue">S</span>
+                MQTT cloud server right now, starting
+                at 3,50€ / Month. You can also self-host and manage it using following one of the MQTT installation
+                guides.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div class="column" id="CODE">
+            <img class="section artwork" src="../../assets/images/generative_lines_3.png" alt="abstract line artwork">
+        </div>
+        <div class="column">
+            <div class="title-container -visible">
+                <h3 class="title text-red">Tested & Extensible UX/UI"</h3>
+                <h4 class="subtitle">Well-Engineered Flows for Connection and Onboarding</h4>
+            </div>
+            <p>Use, reuse and adapt any combination of our existing UX flows and UI components.</p>
+            <p>We provide code examples, documentation for remote control UIs, Quality of Life features, onboarding
+                flows and error handling.</p>
+            <p>Jump right into one of the Vue.js A-Frame and Three.js templates, or pick
+                single components from the modular Repository architecture.</p>
+        </div>
+
+    </section>
+    <footer class="imprint">
+        Barthélémy Bonhomme // Hans-Böckler-Straße 28 // 53225 Bonn — This page saves no data,
+        no cookies, and doesn’t track you.
+    </footer>
+
 
 {% endblock %}
