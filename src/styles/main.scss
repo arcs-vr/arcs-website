@@ -1,5 +1,21 @@
 @import "vars";
-@import "logo.scss";
+@import "components/logo";
+
+/*
+ * TODO Please replace all margin and paddings with multiples of $spacer (1rem=16px). Example: 32px = 2*$spacer.
+ * Read more here: https://sass-lang.com/guide#topic-2
+ */
+
+/*
+ * TODO Please replace and extract colors with variables in "vars".
+ * Example: color: $black;
+ * Example: background-color: $red;
+ * Read more here: https://sass-lang.com/guide#topic-2
+ */
+
+/*
+ * TODO please order the rules: html, body, [html tags], [utility classes], [reusable classes], [single use classes]
+ */
 
 html {
   scroll-behavior: smooth;
@@ -28,6 +44,8 @@ a {
 }
 
 a:hover {
+  /* TODO Please merge this rule with the one on line 22 using the "&:hover {}" selector. Read more here: https://css-tricks.com/the-sass-ampersand/ */
+
   color: #95e4f9;
 }
 
