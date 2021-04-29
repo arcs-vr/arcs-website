@@ -1,60 +1,43 @@
 @import "vars";
 @import "components/logo";
 
-/*
- * TODO Please replace all margin and paddings with multiples of $spacer (1rem=16px). Example: 32px = 2*$spacer.
- * Read more here: https://sass-lang.com/guide#topic-2
- */
-
-/*
- * TODO Please replace and extract colors with variables in "vars".
- * Example: color: $black;
- * Example: background-color: $red;
- * Read more here: https://sass-lang.com/guide#topic-2
- */
-
-/*
- * TODO please order the rules: html, body, [html tags], [utility classes], [reusable classes], [single use classes]
- */
-
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #222;
-  color: white;
+  background-color: $black;
+  color: $white;
   margin: 0;
 }
 
-.text-red {
-  color: #ef8f9d;
-}
-
-.text-blue {
-  color: #95e4f9;
+p {
+  font-family: $text-font;
+  font-size: $font-size-base;
+  margin-bottom: 0;
+  margin-top: $spacer;
+  text-align: left;
 }
 
 a {
-  color: white;
-  font: normal normal normal 32px/49px sofia-pro, sans-serif;
-  margin: 16px;
-  padding: 16px;
+  color: $white;
+  font-family: $text-font;
   text-decoration: none;
+  transition: .2s ease;
+
+  &:hover {
+    color: $blue;
+  }
 }
 
-a:hover {
-  /* TODO Please merge this rule with the one on line 22 using the "&:hover {}" selector. Read more here: https://css-tricks.com/the-sass-ampersand/ */
-
-  color: #95e4f9;
+h1,
+h3 {
+  font-size: 3*$font-size-base;
 }
 
-nav {
-  display: flex;
-  flex-direction: row;
-  position: fixed;
-  right: 0;
-  top: 0;
+h2,
+h4 {
+  font-size: 1.5*$font-size-base;
 }
 
 header,
@@ -66,8 +49,30 @@ section {
   width: 100vw;
 }
 
+.text-red {
+  color: $red;
+}
+
+.text-blue {
+  color: $blue;
+}
+
+.main-navigation {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  a {
+    margin: $spacer;
+    padding: $spacer;
+    text-transform: uppercase;
+  }
+}
+
 .logo-container {
-  margin-right: 64px;
+  margin-right: 4*$spacer;
   max-width: 500px;
   position: relative;
   transition: width;
@@ -92,14 +97,14 @@ section {
   }
 
   .title {
-    font: normal normal normal 64px/77px filson-pro, sans-serif;
+    font-family: $title-font;
     letter-spacing: -.64px;
     margin: 0;
     text-align: left;
   }
 
   .subtitle {
-    font: normal normal normal 32px/49px sofia-pro, sans-serif;
+    font-family: $text-font;
     margin: 0;
   }
 }
@@ -109,25 +114,42 @@ section {
   flex-direction: column;
   width: 50%;
 
+  p {
+    padding-right: 4*$spacer;
+  }
+
   .section-artwork {
     width: 100%;
   }
 
   .subtitle {
-    margin-bottom: 16px;
+    margin-bottom: $spacer;
   }
 }
 
-p {
-  font: normal normal normal 24px/37px filson-pro, sans-serif;
-  margin-bottom: 0;
-  margin-top: 16px;
-  text-align: left;
+.link {
+  align-items: center;
+  color: $blue;
+  display: flex;
+  flex-direction: row;
+  margin-top: $spacer;
+  padding: 0;
+
+  .chevron {
+    height: 1.5*$spacer;
+    margin-right: .5*$spacer;
+    width: 1.5*$spacer;
+  }
+
+  &:hover {
+    color: $white;
+  }
 }
 
 .imprint {
-  font: normal normal normal 16px/24px sofia-pro, sans-serif;
-  margin: 16px;
-  padding: 16px;
+  font-family: $text-font;
+  font-size: .8*$font-size-base;
+  margin: $spacer;
+  padding: $spacer;
   text-align: center;
 }
