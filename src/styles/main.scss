@@ -23,7 +23,7 @@ a {
   color: $white;
   font-family: $text-font;
   text-decoration: none;
-  transition: .2s ease;
+  transition: color .5*$duration $easing;
 
   &:hover {
     color: $blue;
@@ -47,6 +47,7 @@ section {
   height: 100vh;
   justify-content: center;
   overflow: hidden;
+  position: relative;
   width: 100vw;
 }
 
@@ -58,22 +59,13 @@ section {
   color: $blue;
 }
 
-.column {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
+.title {
+  font-family: $title-font;
+  letter-spacing: -.64px;
+}
 
-  .section-artwork {
-    width: 100%;
-  }
-
-  .subtitle {
-    margin-bottom: $spacer;
-  }
-
-  p {
-    padding-right: 4*$spacer;
-  }
+.subtitle {
+  font-family: $text-font;
 }
 
 .main-navigation {
@@ -82,6 +74,7 @@ section {
   position: fixed;
   right: 0;
   top: 0;
+  z-index: 1;
 
   a {
     margin: $spacer;
@@ -90,52 +83,86 @@ section {
   }
 }
 
-.logo-container {
-  margin-right: 4*$spacer;
-  position: relative;
-  transform-origin: right;
-  transition: transform;
-  transition-duration: 1s;
-  width: 50vw;
+.row {
+  flex-direction: row;
 
-  &.-small {
-    transform: scale($logo-factor);
+  .column {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+    .section-artwork {
+      width: 100%;
+    }
+
+    .subtitle {
+      margin-bottom: $spacer;
+    }
+
+    &:last-child {
+      padding-left: 0;
+      padding-right: 4*$spacer;
+    }
+  }
+
+  &:nth-of-type(even) {
+    flex-direction: row-reverse;
+
+    .column:last-child {
+      padding-left: 4*$spacer;
+      padding-right: 0;
+    }
   }
 }
 
-.title-container {
+.header-content {
+  align-items: center;
   display: flex;
-  flex-direction: column;
-  opacity: 0;
-  overflow: hidden;
-  transition: opacity;
-  transition-duration: 1s;
-  width: 50vw + ((1 - $logo-factor) * 50vw);
+  flex-direction: row;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-.5 * $logo-width, -50%);
+  transition: transform $duration $easing;
 
-  .title,
-  .subtitle {
-    margin: 0;
-    transform: translateX(-100%);
-    transition: transform;
-    transition-duration: 1s;
+  .logo-container {
+    margin-right: 4*$spacer;
+    position: relative;
+    transform-origin: right;
+    transition: transform $duration $easing;
+    width: $logo-width;
   }
 
-  .title {
-    font-family: $title-font;
-    letter-spacing: -.64px;
-  }
-
-  .subtitle {
-    font-family: $text-font;
-  }
-
-  &.-visible {
+  .title-container {
     display: flex;
-    opacity: 1;
+    flex-direction: column;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity $duration $easing;
 
     .title,
     .subtitle {
-      transform: translateX(0);
+      margin: 0;
+      transform: translateX(-100%);
+      transition: transform $duration $easing;
+      white-space: nowrap;
+    }
+  }
+
+  &.-revealed {
+    transform: translate(calc(-50% - (#{.5*$logo-factor*$logo-width})), -50%);
+
+    .title-container {
+      opacity: 1;
+
+      .title,
+      .subtitle {
+        transform: translateX(0);
+      }
+    }
+
+    .logo-container {
+      transform: scale($logo-factor);
     }
   }
 }

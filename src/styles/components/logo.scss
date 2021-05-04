@@ -14,14 +14,14 @@
 
   @keyframes #{$name} {
 
-    0%,
-    100% {
-      transform: translate3d(0, $distance, 0);
-    }
-
     50%,
     90% {
       transform: translate3d(0, 0, 0);
+    }
+
+    0%,
+    100% {
+      transform: translate3d(0, $distance, 0);
     }
   }
 }

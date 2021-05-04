@@ -9,22 +9,24 @@
         <a href="#code">code</a>
     </nav>
     <header>
-        <div class="logo-container -small">
-            {% include "../components/logo.twig" %}
-        </div>
-        <div class="title-container -visible">
-            <h1 class="title">
-                <span class="text-red">A</span>rbitrary
-                <span class="text-red">R</span>emote
-                <span class="text-red">C</span>ontrol
-                <span class="text-blue">S</span>ystem
-            </h1>
-            <h2 class="subtitle">
-                Multi-Device Interactive Web Based VR
-            </h2>
+        <div id="header-content" class="header-content">
+            <div class="logo-container">
+                {% include "../components/logo.twig" %}
+            </div>
+            <div class="title-container">
+                <h1 class="title">
+                    <span class="text-red">A</span>rbitrary
+                    <span class="text-red">R</span>emote
+                    <span class="text-red">C</span>ontrol
+                    <span class="text-blue">S</span>ystem
+                </h1>
+                <h2 class="subtitle">
+                    Multi-Device Interactive Web Based VR
+                </h2>
+            </div>
         </div>
     </header>
-    <section>
+    <section class="row">
         <div
           class="column"
           id="what"
@@ -36,7 +38,7 @@
             >
         </div>
         <div class="column">
-            <div class="title-container -visible">
+            <div class="title-container">
                 <h3 class="title text-red">Connect Multiple Devices</h3>
                 <h4 class="subtitle">Smartphones, Tablets, Laptops, Desktop PCs, Fridges</h4>
             </div>
@@ -55,7 +57,7 @@
         </div>
     </section>
 
-    <section>
+    <section class="row">
         <div
           class="column"
           id="how"
@@ -67,7 +69,7 @@
             >
         </div>
         <div class="column">
-            <div class="title-container -visible">
+            <div class="title-container">
                 <h3 class="title text-red">Peer-To-Peer Connectivity</h3>
                 <h4 class="subtitle">The most direct way for cross-devices communication.</h4>
             </div>
@@ -96,7 +98,7 @@
         </div>
     </section>
 
-    <section>
+    <section class="row">
         <div
           class="column"
           id="code"
@@ -108,7 +110,7 @@
             >
         </div>
         <div class="column">
-            <div class="title-container -visible">
+            <div class="title-container">
                 <h3 class="title text-red">Tested & Extensible UX/UI</h3>
                 <h4 class="subtitle">Well-Engineered Flows for Connection and Onboarding</h4>
             </div>
